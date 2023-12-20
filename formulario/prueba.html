@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Agregar Datos al Formulario</title>
+</head>
+<body>
+
+<form id="miFormulario">
+    
+    <div id="datosDinamicos"></div>
+
+    <button type="button" onclick="solicitarYAgregarDatos()">Solicitar y Agregar Datos</button>
+</form>
+
+<script>
+function solicitarYAgregarDatos() {
+
+    var nuevosDatos = obtenerDatosDelUsuario();
+
+    agregarDatosAlFormulario(nuevosDatos);
+}
+
+function obtenerDatosDelUsuario() {
+    
+    return {
+        nombre: "Usuario",
+        edad: 25,
+        ciudad: "Ejemplo"
+    };
+}
+
+function agregarDatosAlFormulario(datos) {
+    var nuevoElemento = document.createElement("div");
+
+    for (var clave in datos) {
+        if (datos.hasOwnProperty(clave)) {
+            var parrafo = document.createElement("p");
+            parrafo.textContent = clave + ": " + datos[clave];
+            nuevoElemento.appendChild(parrafo);
+        }
+    }
+    document.getElementById("datosDinamicos").appendChild(nuevoElemento);
+}
+</script>
+
+</body>
+</html>
