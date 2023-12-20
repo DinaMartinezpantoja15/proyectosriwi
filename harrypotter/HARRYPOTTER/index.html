@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>hogwarts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" >
+    <link rel="stylesheet" href="./app.css">
+
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="row ">
+            <div id="section1" class="section1 display-none">
+                <h1> Bienvenidos a hogwarts </h1>
+                <div class="label">
+                    <input type="text" class="form-control" id="Nombre" placeholder="Ingresa tu Nombre">
+                    <button onclick="continuar2()" type="button" class="btn btn-outline-warning ml-100">Continuar</button>
+                </div>
+                <video id="video-background" autoplay muted loop>
+                    <source src="./img/Gen-2 3348879522, castillojpg, brush_H -13, brush_V -12, brush_P -13.mp4" type="video/mp4">
+                    Tu navegador no soporta el elemento de video.
+                </video>
+            </div>
+            <div id="section2" class="section2 display-none" >
+          
+                <div id="section-2 " class="section-2 row">
+
+                    <audio id="audioDeFondo" loop>
+                        <source src="./audio/WhatsApp Audio 2023-12-08 at 3.07.21 PM.mpeg" type="audio/mp3">
+                        
+                    </audio>
+                    <div class="col-md-6 mt-5">
+                        <img src="./img/f-sect2.jpeg" style="width:500px;" alt="">
+                    </div>
+                    <div class="text col-md-6 mt-5">
+                        <p> En un momento pasaran al salon a reunirte con tus compañeros pero antes de reunirte con tus compañeros, seras selecionado para las casas, son:  Gryffindor, Hufflepuff, Ravenclaw y Slytherin</p>
+                        <img src="./img/casas.gif" alt="">
+                        <button onclick="reproducirAudio()">Reproducir Audio</button>
+                        <button onclick="continuar3()"> continuar</button>
+                    </div>
+                </div>
+            </div>
+            <div class="section3 display-none" id="section3">
+                <div class="section3-1 row" id="section3-1">
+                    <div class="col-md-6 mt-5">
+                        <img src="./img/magonaga.jpg" style="width:500px;"alt="">
+                    </div>
+                    <div class="col-md-6 mt-5">
+                        <h2>Antes de continuar  debes responder unas preguntas Para ingresar a la sala y elegir tu casa</h2>
+                        <button onclick="continuar4()">continuar</button>
+                    </div>
+
+
+                </div>
+            </div>
+            <div id="section4" class=" form  col-md-12 display-none" >
+                <object type="text/html" data="./formulario.html" width="600" height="400"></object>
+            </div>
+            <div id="section5" class="section5">
+                <div>
+                    <div class="d-flex align-items-center">
+                        Listo para saber tu casa!!
+                        <button> Mostrar Casa</button>
+                      </div>
+                </div>
+
+            </div>
+
+
+
+
+
+        </div>
+
+    </div>
+    <script src="./app.js"></script>
+    
+</body>
+</html>
