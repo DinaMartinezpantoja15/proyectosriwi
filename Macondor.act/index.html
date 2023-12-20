@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>macondor</title>
+    <link rel="stylesheet" href="./app.css">
+    <link rel="stylesheet" href="./app2.css">
+
+</head>
+<body>
+    <section>
+                <div id="portada" class="section45">     
+                        <h1>Viaje a Cartagena</h1> 
+                        <button class="buttoninicio"  onclick="iniciarv()">Iniciar Viaje</button>
+                </div>
+
+            <div class="principal setion2">
+
+                <div  id="prin1"  class=" foto1 display-none">
+                    <h1> ¡listos para empezar esta aventura!</h1>
+                    <img src="https://previews.123rf.com/images/kenbenner/kenbenner1506/kenbenner150600013/41700073-ilustraci%C3%B3n-de-dibujos-animados-de-un-hombre-con-las-maletas.jpg" alt="" >
+                </div>
+                <div class="setion2" >
+                    <div id="opcion" class="decision display-none"> 
+                        <h2> ¿Deseas comprar algo para comer?</h2>
+                        <button onclick="botons()">SI</button>
+                        <button onclick="botonn()">NO</button>
+                    </div>
+                    <div id="card1"  class=" card1 display-none" >
+                        <h1>Por favor seleciona uno de las combos</h1>
+                        <div class="container">
+                            
+                            <div class="card">
+                                <div class="img"></div>
+                                <img src="https://www.comedera.com/wp-content/uploads/2022/03/Almojabana-shutterstock_1140698009.jpg" alt="">
+                                <div class="contenter">
+                                    <h2>Combo 1</h2>
+                                    <h4>comprar una almojábana con gaseosa son 15.000</h4>
+                                    <button onclick="selec()">Comprar</button>
+                                    
+                                </div>
+                            </div>
+                            <div class="card">
+                                <div class="img">
+                                </div>
+                                <img src="https://listopronto.co/assets/img/items/1634706105tu21cZvMah.jpg" alt="">
+                                <div class="contenter">
+                                    <h2>Combo 2 </h2>
+                                    <h4>un subway con gaseosa 23.000</h4>  
+                                    <button onclick="selec2()">Comprar</button>
+                                </div>
+                            </div>
+                            <button onclick="volverI()">volver</button>
+                        </div>
+                    </div>
+                </div>
+                <div id="fact" class="cuadro display-none"  >
+                    <h1>prosupuesto</h1>
+                    <table class="prosupuesto" border="10px">
+                        <thead>
+                            <tr>
+                                <td> Gastos</td>
+                                <td> Descripcion</td>
+                                <td>Saldo dispobible</td>
+                            </tr>
+                            <tr>
+                                <td id="valor">15000 </td>
+                                <td id="concepto">  una almojábana con gaseosa </td> 
+                                <td id="saldo"></td>
+                            </tr>
+                        </thead>
+                    </table>
+                    <button class="menup" onclick="volverc()">volver al menu principal</button>
+                    <button class="menup" onclick="continuarE()">Continuar</button>
+                </div>
+                <div id="par2" class=" card2 orden display-none">
+                    <div id="part6"class=" foto1">
+                        <h1> Abordaje</h1>
+                        <img src="https://previews.123rf.com/images/kenbenner/kenbenner1506/kenbenner150600013/41700073-ilustraci%C3%B3n-de-dibujos-animados-de-un-hombre-con-las-maletas.jpg" alt="" >
+                    </div>
+                    <div id="preg" >
+                        <h1> Ups! tu equipaje excede de  tamaño</h1>
+                        <h2> para ajustarlo dale click en ajustar</h2>
+                        <button onclick="ajustar()">Ir a justar equipaje</button>
+                    </div>
+                    <div id="equip" class="card2 display-none" >
+                        <h1>Equipaje</h1>
+                        <table class="tabla">
+                            <thead>
+                                <tr>
+                                    <td>Cantidad</td>
+                                    <td>Articulo</td>
+                                    <td>Peso x Prenda</td>
+                                    <td>Cant a reducir</td>
+                                    <td>Total reducido</td>
+                                </tr>
+                            </thead>
+                            <tr>
+                                <td>12</td>
+                                <td>Camisetas</td>
+                                <td>250 gramos</td>
+                                <td><input class="cantiCami" id="cantiCamiseta" onclick="calcular()" type="number"></td>
+                                <td id="totalCamisetas"></td>
+                            </tr>
+                            <tr>
+                                <td>7</td>
+                                <td>Pantalones</td>
+                                <td>600 gramos</td>
+                                <td><input id="cantiPantalones" onclick="calcular()" type="number"></td>
+                                <td id="totalPantalones"></td>
+                            </tr>
+                            <tr>
+                                <td>10</td>
+                                <td>Ropa Interior</td>
+                                <td>80 gramos</td>
+                                <td><input id="cantiRopaInte" onclick="calcular()" type="number"></td>
+                                <td id="totalRopaInte"></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Sandalias</td>
+                                <td>600 gramos</td>
+                                <td><input id="cantiSandali" onclick="calcular()" type="number"></td>
+                                <td id="totalSandali"></td>
+                            </tr>
+                            <tr>
+                                <td>5</td>
+                                <td>Shorts</td>
+                                <td>350 gramos</td>
+                                <td><input id="cantiShorts" onclick="calcular()" type="number"></td>
+                                <td id="totalShorts"></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Pijama</td>
+                                <td>400 gramos</td>
+                                <td><input id="cantiPijama" onclick="calcular()" type="number"></td>
+                                <td id="totalPijama"></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Calzado Atletico</td>
+                                <td>600 gramos</td>
+                                <td><input id="cantiAtletico" onclick="calcular()" type="number"></td>
+                                <td id="totalAtletico"></td>
+                            </tr>
+                            <tr>
+                                <td>1</td>
+                                <td>Camara de fotos</td>
+                                <td>850 gramos</td>
+                                <td><input id="cantiCamara" onclick="calcular()" type="number"></td>
+                                <td id="totalCamara"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Total</td>
+                                <td id="totalAReducir"></td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td>Peso Actual Maleta</td>
+                                <td id="actualMaleta">12000</td>
+                            </tr>
+                        </table>
+                        <button class="menup" id="volver"  onclick="volver()">volver al menu principal</button>
+                        <button class="menup" id="continuar"  onclick="continuar()">Continuar</button>
+                    </div>
+                    <div id="pag3" class=" orden 2 display-none">
+                        <button id="activarWifi" onclick="activarWifi()">Activar WIFI x $50.000</button>
+                        <br>
+                        <br>
+                        <div id="binario1">Codigo binario 1 = 01110010</div>
+                        <div id="binario2">Codigo binario 2 = 01101001</div>
+                        <div id="binario3">Codigo binario 3 = 01110111</div>
+                        <div id="binario4">Codigo binario 4 = 01101001</div>
+                        <br>
+                        <div class="codigoComp" id="codigoComp"></div>
+                        <button onclick="continuarp4()" >continuar</button>
+                    </div>
+                    <div id="pag4" class="display-none">
+                        <br><br>
+                        Ingrese que desea decir en Macondez <input id="textoIngresado" type="text">
+                        <button  onclick="hablar()">Traducir</button>
+                        <br>
+                        <div >
+                            <p id="pedirTaxi"></p>
+                            <button onclick="continuarp5()">
+                                Pedir Taxi
+                            </button>
+                        </div>
+                    </div>
+                    <div id="pag5" class="display-none">
+                        <div>Vamos a Jugar Piedra Papel o Tijera</div>
+                        <div class="pag5"> 
+                            <div>
+                                <input id="piedra" type="radio" name="opcion" >Piedra
+                                <input id="papel" type="radio" name="opcion" >Papel
+                                <input id="tijera" type="radio" name="opcion" >Tijera
+                            </div>
+                            <div>
+                                <h1>Resultado</h1>
+                            </div>
+                            <br><br>
+                            <button onclick="jugar()">Jugar</button>
+                            <br><br>
+                            <div id="saldo5Caso"></div>
+                        </div>
+                    </div>  
+                    
+                </div>
+            </div>
+        
+    </section>
+    <script src="./app.js"></script>
+    <script src="./app2.js"></script>
+</body>
+
