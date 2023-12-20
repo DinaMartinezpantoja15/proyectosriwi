@@ -1,0 +1,75 @@
+body{
+    display: flex;
+    width: 3050px;
+    border-left: 1px;
+    margin: 1px;
+    background-color:rgb(22, 9, 22); 
+    height: 100%
+}
+.seccion{
+    position: fixed;
+    width: 200px;
+    background-color:#815583;
+    height: 900px;
+    padding: 25px;
+    color: rgb(252, 252, 252);
+    }
+
+.seccion > img{
+    width: 200px;
+
+}
+
+.tam {
+    background-color:rgb(49, 38, 49);
+    height: 900px;
+    width: 500px;
+    padding: 20px;
+    margin-left: 250px
+    ;
+}
+
+
+.marg > img{
+    width: 200px;
+
+}
+
+.inst > img{
+    width: 200px;
+}
+
+  
+.table{
+    color:#f2d3fb;
+    width: 500px;
+    background-color: #fdf5fe;
+}
+.table >img{
+    color:#f2d3fb;
+    width: 500px;
+    
+}
+.solutec{
+    background-color: #6a206f;
+}
+
+.oscuro{
+    color: aliceblue;
+    text-align: center;
+    color: rgb(235, 226, 243);
+    background-color:rgb(49, 38, 49);
+    height: 900px;
+    width: 330px;
+    padding: 20px;
+
+}
+.claro{
+    background-color:rgb(236, 224, 236);
+    text-align: center;
+    height: 900px;
+    width: 330px;
+    padding: 20px;
+    color: rgb(100, 44, 146);
+
+}
