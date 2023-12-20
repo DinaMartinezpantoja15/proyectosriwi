@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inicio de secccion
+    </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="./app.css">
+</head>
+<body>
+    <nav>
+        <div class="nav-wrapper #9c27b0 purple">
+          <a href="#" class="brand-logo">Animalaya</a>
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+          </ul>
+        </div>
+      </nav>
+    <div class="container">
+        <div class="row">
+            <div class="col s5">
+                <div class="card formi">
+                    <div id="card_content"  class="card-content">
+                        <h3 >Inicio de secccion</h3>
+                        <input placeholder="Correo electronico" id="correo" type="text" class="validate">
+                        <label for="correo">Email</label>
+                        <input placeholder="password" id="password" type="password" class="validate">
+                        <label for="password">Contraseña</label>
+                        <br>
+                        <button  id="buttoniniciar"  onclick="iniciarSesion()" class="btn deep-purple darken-4">Iniciar sesion</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</body>
+<script>
+    function iniciarSesion(){
+    persons = [
+        {
+           nombre :"dina",
+           correo : "dinamp@gmail.com",
+           genero: "femenino",
+           password : "123654",
+           Image:['./images/img-1.jpg',
+                './images/img-2.jpeg',
+                './images/img-3.jpg',
+                './images/img-4.jpg',
+                './images/img-5.webp',
+                './images/img-6.jpg',
+                './images/img-7.jpg',
+                './images/img-8.jpg',
+                './images/img-9.webp',
+                './images/img-10.jpeg',]
+
+       },
+      {
+           nombre :"Andres",
+           correo : "andres@gmail.com",
+           genero: "masculino",
+           password : "789654",
+           Image:[
+           './images/img-11.jpg',
+               './images/img-12.jpg',
+               './images/img-13.jpeg',
+               './images/img-14.webp',
+               './images/img-15.jpg',
+               './images/img-16.jpg',
+               './images/img-17.webp',
+               './images/img-18.jpg',
+               './images/img-19.jpg',
+               './images/img-20.jpg',
+           ]
+
+       }
+       ,
+       {
+           nombre :"daniel",
+           correo : "danielt@gmail.com",
+           genero: "masculino",
+           password : "456321",
+           Image:[
+           './images/img-11.jpg',
+               './images/img-12.jpg',
+               './images/img-13.jpeg',
+               './images/img-14.webp',  
+               './images/img-15.jpg',
+               './images/img-16.jpg',
+               './images/img-17.webp',
+               './images/img-18.jpg',
+               './images/img-19.jpg',
+               './images/img-20.jpg',
+           ]
+       }
+    ]
+
+    let correo = document.getElementById('correo').value;
+    let password = document.getElementById('password').value;
+
+    persons.forEach(function(person){            
+        if(correo == person.correo && password == person.password){
+           sessionStorage.setItem('nombre', person.nombre)
+           sessionStorage.setItem('auth',"si");
+           if (person.correo == "dinamp@gmail.com") {
+               localStorage.setItem("genero","femenino")
+               console.log("1")
+            }
+            else{ 
+                localStorage.setItem("genero","masculino")
+                console.log("ENTRO A ESTA")
+            }
+            location.href = "home.html";
+            
+        
+    }
+
+    });
+
+}
+correo.onblur = function() {
+    if (!correo.value.includes('@')) { 
+        document.getElementById('correo').focus();
+        document.getElementById("correo").classList.remove('validate')
+        document.getElementById("correo").classList.add('invalid')
+    }
+    else{
+        this.classList.remove('invalid');
+
+    }
+    };
+
+
+
+
+/*     let button = document.getElementById('buttoniniciar').value;
+    let password = document.getElementById('password').value;
+    if (!password.value("")){
+        button.removeAttribute("disabled");
+
+    }else{
+        button.element.setAttribute("disabled", "disabled");
+        
+    } */
+
+
+
+
+
+
+
+
+
+/* var card_content = document.getElementById("card_content")
+    var button = document.createElement("button");
+    button.classList.add("btn","deep-purple"," darken-4");
+    card_content.appendChild(button);
+
+    console.log("Hola") */
+
+
+
+</script>
+</html>
