@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Formulario Harry Potter</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js"></script>
+  <link rel="stylesheet" href="./app.css">
+</head>
+<body>
+
+  <div class="form2" >
+    <form id="formulario">
+      <div class="input-group">
+        <label for="formGroupExampleInput2" class="form-label">Edad:</label>
+        <input type="text" class="form-control input-magico" id="edad" placeholder="Ingresa tu edad" required>
+        <button type="button" class="btn "   onclick="siguienteCampo()">Siguiente</button>
+      </div>
+
+      <div class="input-group">
+        <label for="formGroupExampleInput" class="form-label">Familia:</label>
+        <input type="text" class="form-control input-magico" id="familia" placeholder="Ingresa tu familia" required>
+        <button type="button" onclick="siguienteCampo()">Siguiente</button>
+      </div>
+
+      <div class="input-group">
+        <label for="cualidades" class="form-label">Cualidades:</label>
+        <select class="form-select input-magico" id="cualidades" aria-label="Default select example" required>
+          <option selected>Selecciona tus cualidades</option>
+          <option value="1">Valor, fuerza, audacia</option>
+          <option value="2">Justicia, Lealtad, Paciencia</option>
+          <option value="3">Creatividad, Erudición, Inteligencia</option>
+          <option value="4">Ambición, Determinación, Astucia</option>
+        </select>
+        <button type="button" onclick="siguienteCampo()">Siguiente</button>
+      </div>
+
+      <div class="input-group">
+        <label for="linaje" class="form-label">Linaje:</label>
+        <select class="form-select input-magico" id="linaje" aria-label="Default select example" required>
+          <option selected>Seleccione su linaje</option>
+          <option value="1">Mestizo</option>
+          <option value="2">Muggle</option>
+          <option value="3">Sangre pura</option>
+        </select>
+        <button type="button" onclick="enviarFormulario()">Descubrir Casa</button>
+      </div>
+    </form>
+  </div>
+  <script src="./app.js"></script>
+
+
+</body>
+</html>
