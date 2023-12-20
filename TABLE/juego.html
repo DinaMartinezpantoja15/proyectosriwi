@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de Ahorcado</title>
+    <style>
+        #word-container {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        #input-container {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div id="word-container"></div>
+<div id="input-container">
+    <label for="letterInput">Ingresa una letra: </label>
+    <input type="text" id="letterInput" maxlength="1">
+    <button onclick="checkLetter()">Comprobar</button>
+</div>
+
+<script>
+    // Palabra a adivinar
+    const palabraSecreta = "riwi";
+
+    // Arreglo para almacenar letras adivinadas
+    let letrasAdivinadas = [];
+
+    // Inicializar la palabra oculta con guiones bajos
+    let palabraOculta = Array(palabraSecreta.length).fill('_');
+
+    // Función para mostrar la palabra oculta en el HTML
+    function mostrarPalabra() {
+        document.getElementById('word-container').innerText = palabraOculta.join(' ');
+    }
+
+    // Función para comprobar si la letra ingresada está en la palabra
+    function checkLetter() {
+        const letraIngresada = document.getElementById('letterInput').value.toLowerCase();
+
+        // Verificar si la letra ya fue adivinada
+        if (letrasAdivinadas.includes(letraIngresada)) {
+            alert("Ya adivinaste esa letra. ¡Intenta con otra!");
+            return;
+        }
+
+        // Verificar si la letra está en la palabra
+        if (palabraSecreta.includes(letraIngresada)) {
+            // Actualizar la palabra oculta con la letra adivinada
+            for (let i = 0; i < palabraSecreta.length; i++) {
+                if (palabraSecreta[i] === letraIngresada) {
+                    palabraOculta[i] = letraIngresada;
+                }
+            }
+
+            // Agregar la letra a la lista de letras adivinadas
+            letrasAdivinadas.push(letraIngresada);
+
+            // Mostrar la palabra actualizada
+            mostrarPalabra();
+
+            // Verificar si se adivinó toda la palabra
+            if (!palabraOculta.includes('_')) {
+                alert("¡Felicidades! Has adivinado la palabra.");
+            }
+        } else {
+            alert("Incorrecto. ¡Intenta con otra letra!");
+        }
+    }
+
+    // Inicializar el juego mostrando la palabra oculta
+    mostrarPalabra();
+</script>
+
+</body>
+</html>
